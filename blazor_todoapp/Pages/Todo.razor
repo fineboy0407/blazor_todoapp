@@ -7,6 +7,7 @@
         <li>
             <input type="checkbox" @bind="todo.IsDone"/>
             <input @bind="todo.Title"/>
+            <button>X</button>
         </li>
     }
 </ul>
@@ -25,5 +26,10 @@
             todos.Add(new TodoItem { Title = newTodo });
             newTodo = string.Empty;
         }
+    }
+
+    private void DeleteTodo(TodoItem delTodo)
+    {
+        todos.Remove(delTodo);
     }
 }
